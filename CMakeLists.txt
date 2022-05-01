@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
+
+project(sudoku-solver LANGUAGES CXX)
+
+# setting defaults
+if (NOT(CMAKE_CXX_STANDARD))
+    set(CMAKE_CXX_STANDARD 17)
+endif()
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+if((CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR (CMAKE_CXX_COMPILER_ID STREQUAL "GNU"))
+    set(CMAKE_CXX_FLAGS_DEBUG "-Og -g")
+endif()
+
+add_subdirectory(src)
